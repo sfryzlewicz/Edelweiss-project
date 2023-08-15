@@ -1,24 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from 'react';
+import CatalogData from './data/CatalogData.json';
+import { CatalogListDisplay } from './components/CatalogListDisplay';
+import { CatalogInformation } from './components/CatalogInformation';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <CatalogInformation />
+    <div className="app" style={{margin: '50px'}}>
+      
+      <CatalogListDisplay productList={CatalogData.products} />
+    </div></>
   );
 }
 
